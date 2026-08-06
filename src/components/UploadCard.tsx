@@ -130,43 +130,58 @@ export const UploadCard: React.FC<UploadCardProps> = ({
                 transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
                 className="w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-[#FFD81A] border-3 border-[#09562C] shadow-goa flex items-center justify-center mb-4 relative rotate-[-2deg] group-hover:rotate-0 transition-transform"
               >
-                <Camera className="w-10 h-10 sm:w-12 sm:h-12 text-[#09562C]" />
+                <ImageIcon className="w-10 h-10 sm:w-12 sm:h-12 text-[#09562C]" />
                 <div className="absolute -bottom-2 -right-2 p-1.5 rounded-xl bg-[#FF0F7B] border-2 border-[#09562C] text-white">
                   <Upload className="w-4 h-4" />
                 </div>
               </motion.div>
 
               {/* Text instructions */}
-              <h3 className="font-sans font-black text-xl sm:text-2xl text-[#09562C] mb-1 flex items-center justify-center gap-2">
-                <Camera className="w-5 h-5 text-[#09562C] shrink-0" />
-                <span>Upload Selfie</span>
+              <h3 className="font-sans font-black text-xl sm:text-2xl text-[#09562C] mb-1.5">
+                Upload Your Builder Photo
               </h3>
-              <p className="font-mono text-xs sm:text-sm font-bold text-[#0E6D38] mb-3">
-                or Drag & Drop your image here
+              <p className="font-mono text-xs sm:text-sm font-bold text-[#0E6D38] mb-4 max-w-sm">
+                Drag &amp; drop your photo here or choose one from your device.
               </p>
 
+              {/* Prominent "Choose Photo" Button */}
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  fileInputRef.current?.click();
+                }}
+                className="px-6 py-3 rounded-2xl bg-[#09562C] text-[#FFD81A] font-sans font-black text-sm sm:text-base border-2 border-[#09562C] shadow-goa-sm hover:bg-[#FF0F7B] hover:text-white active:scale-95 transition-all flex items-center gap-2 cursor-pointer mb-4"
+              >
+                <Upload className="w-4 h-4" />
+                <span>Choose Photo</span>
+              </button>
+
               {/* Supported formats & Max size badges */}
-              <div className="flex flex-wrap items-center justify-center gap-2 text-[11px] font-mono font-extrabold text-[#09562C]/80">
-                <span className="px-2.5 py-0.5 rounded-full bg-[#F7F0DD] border border-[#09562C]">
+              <div className="flex flex-wrap items-center justify-center gap-2 text-[11px] font-mono font-extrabold text-[#09562C]">
+                <span className="px-3 py-1 rounded-full bg-[#F7F0DD] border border-[#09562C] shadow-2xs">
                   Supported: JPG • PNG • HEIC
                 </span>
-                <span className="px-2.5 py-0.5 rounded-full bg-[#FFD81A] border border-[#09562C]">
+                <span className="px-3 py-1 rounded-full bg-[#FFD81A] border border-[#09562C] shadow-2xs">
                   Max size: 10 MB
                 </span>
               </div>
 
-              {/* Mobile direct camera option badge */}
-              <div className="mt-4 pt-3 border-t border-[#09562C]/20 flex items-center gap-2">
+              {/* Drag & Drop Hint / Camera Option */}
+              <div className="mt-5 pt-3 border-t border-[#09562C]/20 flex items-center gap-3 flex-wrap justify-center">
+                <span className="font-mono text-[11px] font-bold text-[#09562C]/70">
+                  💡 Drag &amp; drop files directly
+                </span>
                 <button
                   type="button"
                   onClick={(e) => {
                     e.stopPropagation();
                     cameraInputRef.current?.click();
                   }}
-                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-[#09562C] text-[#FFD81A] font-mono text-xs font-bold hover:bg-[#FF0F7B] hover:text-white transition-colors"
+                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-white text-[#09562C] border border-[#09562C] font-mono text-xs font-bold hover:bg-[#FFD81A] transition-colors cursor-pointer"
                 >
-                  <Camera className="w-3.5 h-3.5" />
-                  <span>Take Photo with Camera</span>
+                  <Camera className="w-3.5 h-3.5 text-[#FF0F7B]" />
+                  <span>Take Photo</span>
                 </button>
               </div>
             </div>
