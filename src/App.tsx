@@ -30,22 +30,21 @@ import { BuilderData } from './types';
 
 export default function App() {
   // Screen state: 1 = Landing, 2 = Upload Selfie, 3 = Builder Registration, 4 = Identity Printing, 5 = Official Pass Reveal
-  const [currentScreen, setCurrentScreen] = useState<number>(5); // Default to Screen 5 for direct preview
+  const [currentScreen, setCurrentScreen] = useState<number>(1);
   const [isAboutOpen, setIsAboutOpen] = useState<boolean>(false);
   const [isHowItWorksOpen, setIsHowItWorksOpen] = useState<boolean>(false);
 
   // Global Check-In Builder Data State
   const [builderData, setBuilderData] = useState<BuilderData>({
-    selfieUrl:
-      'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=600',
-    selfieName: 'Alex_Tropical_Selfie.jpg',
-    selfieSize: '1.8 MB',
-    fullName: 'Alex Vance',
-    builderStack: 'AI / ML',
-    currentRole: 'Founder',
-    city: 'Goa',
-    oneWord: 'Fearless',
-    builderTitle: 'Prompt Wizard',
+    selfieUrl: '',
+    selfieName: '',
+    selfieSize: '',
+    fullName: '',
+    builderStack: '',
+    currentRole: '',
+    city: '',
+    oneWord: '',
+    builderTitle: '',
   });
 
   const handleStartCheckIn = () => {
@@ -95,6 +94,17 @@ export default function App() {
   };
 
   const handleRestartCheckIn = () => {
+    setBuilderData({
+      selfieUrl: '',
+      selfieName: '',
+      selfieSize: '',
+      fullName: '',
+      builderStack: '',
+      currentRole: '',
+      city: '',
+      oneWord: '',
+      builderTitle: '',
+    });
     setCurrentScreen(1);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
