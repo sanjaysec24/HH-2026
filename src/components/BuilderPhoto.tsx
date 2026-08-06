@@ -15,9 +15,9 @@ export const BuilderPhoto: React.FC<BuilderPhotoProps> = ({
   const displayUrl = selfieUrl || defaultSelfie;
 
   return (
-    <div className="relative mx-auto my-4 flex items-center justify-center">
+    <div className="flex flex-col items-center justify-center pt-1 pb-6 w-full">
       {/* Clean Circular Photo Frame with Thin 2px Border */}
-      <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full border-2 border-[#09562C] bg-[#FFD81A] p-1 shadow-xs">
+      <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full border-2 border-[#09562C] bg-[#FFD81A] p-1 shadow-xs shrink-0">
         <div className="w-full h-full rounded-full overflow-hidden bg-white relative">
           <img
             src={displayUrl}
@@ -27,9 +27,9 @@ export const BuilderPhoto: React.FC<BuilderPhotoProps> = ({
         </div>
       </div>
 
-      {/* Entry Verified Stamp Badge */}
-      <div className="absolute -bottom-2 px-3 py-0.5 bg-[#09562C] text-[#FFD81A] border border-[#FFD81A] rounded-full font-mono text-[9px] font-black tracking-wider uppercase shadow-xs flex items-center gap-1">
-        <ShieldCheck className="w-3.5 h-3.5 text-[#FFD81A]" />
+      {/* Entry Verified Stamp Badge - positioned directly beneath photo with 24px margin-bottom */}
+      <div className="-mt-3.5 z-10 px-3 py-0.5 bg-[#09562C] text-[#FFD81A] border border-[#FFD81A] rounded-full font-mono text-[9px] sm:text-[10px] font-black tracking-wider uppercase shadow-xs flex items-center gap-1 shrink-0 whitespace-nowrap">
+        <ShieldCheck className="w-3.5 h-3.5 text-[#FFD81A] shrink-0" />
         <span>ENTRY VERIFIED</span>
       </div>
     </div>

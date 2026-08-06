@@ -232,11 +232,13 @@ export const BuilderPass = forwardRef<HTMLDivElement, BuilderPassProps>(
                 ))}
               </div>
 
-              {/* Pass Number aligned beneath barcode like an airline ticket */}
-              <div className="flex items-center justify-between font-mono text-[10px] font-bold text-[#09562C]/85 px-1 pt-0.5">
-                <span className="tracking-widest">PASS NO. {passNumber}</span>
-                <span className="flex items-center gap-1 text-[#0E6D38] font-black">
-                  <ShieldCheck className="w-3.5 h-3.5" />
+              {/* Pass Number aligned beneath barcode like an airline ticket - NEVER WRAPS */}
+              <div className="flex items-center justify-between gap-2 font-mono text-[9.5px] sm:text-[10.5px] font-bold text-[#09562C]/85 px-1 pt-0.5 w-full min-w-0">
+                <span className="tracking-wider sm:tracking-widest whitespace-nowrap shrink-0">
+                  PASS NO. {passNumber}
+                </span>
+                <span className="flex items-center gap-1 text-[#0E6D38] font-black whitespace-nowrap shrink-0">
+                  <ShieldCheck className="w-3.5 h-3.5 shrink-0" />
                   <span>HH GOA 2026</span>
                 </span>
               </div>
