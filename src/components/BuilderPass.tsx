@@ -173,8 +173,8 @@ export const BuilderPass = forwardRef<HTMLDivElement, BuilderPassProps>(
           {/* Ticket Content Container */}
           <div className="relative z-10 p-6 sm:p-7 pb-10 sm:pb-12 text-[#09562C]">
             {/* 1. HH Goa Branding Header */}
-            <div className="border-b-2 border-[#09562C]/15 pb-5 mb-5">
-              <div className="flex items-center justify-between font-mono text-[10px] font-black tracking-widest text-[#0E6D38] uppercase mb-2.5">
+            <div className="border-b-2 border-[#09562C]/15 pb-5 mb-5 space-y-2.5">
+              <div className="flex items-center justify-between font-mono text-[10px] font-black tracking-widest text-[#0E6D38] uppercase">
                 <span className="inline-flex items-center gap-1.5">
                   <Ticket className="w-3.5 h-3.5 text-[#0E6D38] shrink-0" />
                   <span>EVENT TICKET</span>
@@ -182,14 +182,11 @@ export const BuilderPass = forwardRef<HTMLDivElement, BuilderPassProps>(
                 <span className="shrink-0">{issueDate}</span>
               </div>
 
-              <div className="flex items-center justify-between gap-3">
-                <div className="inline-flex items-center gap-2.5 font-serif text-2xl font-black text-[#09562C] tracking-tight leading-none shrink-0">
-                  <Palmtree className="w-6 h-6 text-[#09562C] shrink-0 relative -top-[1px]" />
+              <div className="flex items-center justify-center">
+                <div className="inline-flex items-center justify-center gap-2.5 font-serif text-2xl sm:text-3xl font-black text-[#09562C] tracking-tight leading-none">
+                  <Palmtree className="w-6 h-6 sm:w-7 sm:h-7 text-[#09562C] shrink-0 relative -top-[1px]" />
                   <span className="whitespace-nowrap">HH GOA 2026</span>
                 </div>
-                <span className="px-3 py-1 rounded-full bg-[#FFD81A] border border-[#09562C] font-mono text-[10px] font-black text-[#09562C] uppercase tracking-wider shadow-2xs shrink-0 whitespace-nowrap">
-                  DELEGATE
-                </span>
               </div>
             </div>
 
